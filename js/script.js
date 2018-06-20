@@ -157,6 +157,7 @@ $(window).on('load', function () {
                         + '</tr>';
       $('.table tbody').append(appendData);
     }
+    
 
     function filterSearchCallback(e) {
       e.preventDefault();
@@ -168,6 +169,7 @@ $(window).on('load', function () {
       getSearchedData(searchData);
       initProgressBar();
     }
+    
 
     function addEvents() {
       $('#filter-search').on('click', filterSearchCallback);
@@ -215,7 +217,7 @@ $(window).on('load', function () {
     function init() {
       addEvents();
     }
-
+    
     init();
 });
 
