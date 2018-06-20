@@ -281,17 +281,17 @@ section {
 }
 
 /*========== MODAL ==========*/
-#myModal .modal-content {
+#dataModal .modal-content {
     box-shadow: none;
     border: none;
 }
 
-#myModal .modal-title {
+#dataModal .modal-title {
     color: #5cb85c;
     font-size: 20px;
 }
 
-#myModal .modal-content p {
+#dataModal .modal-content p {
     font-size: 14px;
     color: #444;
 }

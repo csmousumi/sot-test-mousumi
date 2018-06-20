@@ -219,7 +219,7 @@ $(window).on('load', function () {
 
 function showLicenseModal(app_id){
   $('.modal-application-content').hide();
-  $("#myModal").modal('show', { keyboard: true, backdrop: true });
+  $("#dataModal").modal({ keyboard: true, backdrop: true });
   $('.ajax-load').show();
   window.setTimeout(function() {
     $('.ajax-load').hide();
