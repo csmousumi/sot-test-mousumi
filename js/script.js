@@ -28,6 +28,7 @@ $(window).on('load', function () {
       showStepMessages();
       $.when(barProgress).done(() => {
         window.setTimeout(function() {
+          $('#filter-search').removeAttr('disabled');
           $('#progress-bar-container').hide();
           $('#show-data').show();
         }, 3000);
@@ -159,6 +160,7 @@ $(window).on('load', function () {
 
     function filterSearchCallback(e) {
       e.preventDefault();
+      $('#filter-search').attr('disabled', true);
       searchData.appId = $('#txt_app_id').val().trim();
       searchData.businessName = $('#txt_business_name').val().trim();
       searchData.cityName = $('#txt_city_name').val().trim();
