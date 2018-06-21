@@ -74,8 +74,8 @@ $(window).on('load', function () {
         url: getSearchUrl(searchedData),
         dataType: 'json',
         statusCode: {
-          503: function () {
-            console.log('Status 503');
+          400: function () {
+            console.log('Status 400');
           }
         }
       });
