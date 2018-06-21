@@ -10,6 +10,7 @@ $(window).on('load', function () {
     function resetProgressBar() {
       msgSteps = 0;
       $($progressBar).css('width', '0%');
+      $($progressBarMessage).hide();
       $('#show-data').hide();
       $('.error-msg').hide();
       $('.table tbody').html('');
@@ -28,9 +29,9 @@ $(window).on('load', function () {
       showStepMessages();
       $.when(barProgress).done(() => {
         window.setTimeout(function() {
-          $('#filter-search').removeAttr('disabled');
           $('#progress-bar-container').hide();
           $('#show-data').show();
+          $('#filter-search').removeAttr('disabled');
         }, 3000);
       });
     }
@@ -157,7 +158,7 @@ $(window).on('load', function () {
                         + '</tr>';
       $('.table tbody').append(appendData);
     }
-    
+
 
     function filterSearchCallback(e) {
       e.preventDefault();
@@ -169,7 +170,7 @@ $(window).on('load', function () {
       getSearchedData(searchData);
       initProgressBar();
     }
-    
+
 
     function addEvents() {
       $('#filter-search').on('click', filterSearchCallback);
@@ -217,7 +218,7 @@ $(window).on('load', function () {
     function init() {
       addEvents();
     }
-    
+
     init();
 });
 
