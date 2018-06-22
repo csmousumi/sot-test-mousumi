@@ -6,9 +6,11 @@ $(window).on('load', function () {
     var duration = 30000;
     var stepDuration = (duration / $progressBarMessage.length) + 1000;
     var searchData = {};
-
+    var setTimeVar;
+    
     function resetProgressBar() {
       msgSteps = 0;
+      clearTimeout(setTimeVar);
       $($progressBar).css('width', '0%');
       $($progressBarMessage).hide();
       $('#show-data').hide();
@@ -28,7 +30,7 @@ $(window).on('load', function () {
       });
       showStepMessages();
       $.when(barProgress).done(() => {
-        window.setTimeout(function() {
+        setTimeout(function() {
           $('#progress-bar-container').hide();
           $('#show-data').show();
           $('#filter-search').removeAttr('disabled');
@@ -39,11 +41,11 @@ $(window).on('load', function () {
     function showStepMessages() {
       if (msgSteps < $progressBarMessage.length) {
         $progressBarMessage.eq(msgSteps).show();
-        window.setTimeout(function() {
-          $progressBarMessage.eq(msgSteps).hide();
-          msgSteps++;
-          showStepMessages();
-        }, stepDuration);
+        setTimeVar = setTimeout(function() {
+            $progressBarMessage.eq(msgSteps).hide();
+            msgSteps++;
+            showStepMessages();
+          }, stepDuration);
       }
     }
 
